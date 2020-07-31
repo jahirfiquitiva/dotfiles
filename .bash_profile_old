@@ -1,0 +1,181 @@
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export PATH=~/bin:$PATH
+ 
+txtblk='\e[0;30m' # Black - Regular
+txtred='\e[0;31m' # Red
+txtgrn='\e[0;32m' # Green
+txtylw='\e[0;33m' # Yellow
+txtblu='\e[0;34m' # Blue
+txtpur='\e[0;35m' # Purple
+txtcyn='\e[0;36m' # Cyan
+txtwht='\e[0;37m' # White
+bldblk='\e[1;30m' # Black - Bold
+bldred='\e[1;31m' # Red
+bldgrn='\e[1;32m' # Green
+bldylw='\e[1;33m' # Yellow
+bldblu='\e[1;34m' # Blue
+bldpur='\e[1;35m' # Purple
+bldcyn='\e[1;36m' # Cyan
+bldwht='\e[1;37m' # White
+unkblk='\e[4;30m' # Black - Underline
+undred='\e[4;31m' # Red
+undgrn='\e[4;32m' # Green
+undylw='\e[4;33m' # Yellow
+undblu='\e[4;34m' # Blue
+undpur='\e[4;35m' # Purple
+undcyn='\e[4;36m' # Cyan
+undwht='\e[4;37m' # White
+bakblk='\e[40m'   # Black - Background
+bakred='\e[41m'   # Red
+badgrn='\e[42m'   # Green
+bakylw='\e[43m'   # Yellow
+bakblu='\e[44m'   # Blue
+bakpur='\e[45m'   # Purple
+bakcyn='\e[46m'   # Cyan
+bakwht='\e[47m'   # White
+txtrst='\e[0m'    # Text Reset
+
+
+# get current directory name
+function get_cur_dir() {
+	curdir=${PWD##*/}
+	mee=$(whoami)
+
+	if [[ "$curdir" == "$mee" ]]; then
+		curdir="~"
+	fi
+	echo "$curdir"
+}
+
+# Color man pages output
+man() {
+    env \
+    LESS_TERMCAP_mb=$(printf "\e[1;34m") \
+    LESS_TERMCAP_md=$(printf "\e[1;34m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;35m") \
+    man "$@"
+}
+
+# get current branch in git repo
+function parse_git_branch() {
+	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+	if [ ! "${BRANCH}" == "" ]
+	then
+		STAT=`parse_git_dirty`
+		echo "git:(${BRANCH}${STAT}) "
+	else
+		echo ""
+	fi
+}
+
+# get current status of git repo
+function parse_git_dirty {
+	status=`git status 2>&1 | tee`
+	dirty=`echo -n "${status}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
+	untracked=`echo -n "${status}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$?"`
+	ahead=`echo -n "${status}" 2> /dev/null | grep "Your branch is ahead of" &> /dev/null; echo "$?"`
+	newfile=`echo -n "${status}" 2> /dev/null | grep "new file:" &> /dev/null; echo "$?"`
+	renamed=`echo -n "${status}" 2> /dev/null | grep "renamed:" &> /dev/null; echo "$?"`
+	deleted=`echo -n "${status}" 2> /dev/null | grep "deleted:" &> /dev/null; echo "$?"`
+	bits=''
+	if [ "${renamed}" == "0" ]; then
+		bits=">${bits}"
+	fi
+	if [ "${ahead}" == "0" ]; then
+		bits="*${bits}"
+	fi
+	if [ "${newfile}" == "0" ]; then
+		bits="+${bits}"
+	fi
+	if [ "${untracked}" == "0" ]; then
+		bits="?${bits}"
+	fi
+	if [ "${deleted}" == "0" ]; then
+		bits="x${bits}"
+	fi
+	if [ "${dirty}" == "0" ]; then
+		bits="!${bits}"
+	fi
+	if [ ! "${bits}" == "" ]; then
+		echo " ${bits}"
+	else
+		echo ""
+	fi
+}
+
+function print_before_prompt(){
+	# echo -e "\n⚡️ \[\e[33m\]@ \W\[\e[0m\] \[\e[36m\]\`parse_git_branch\`\[\e[0m\]\[\e[35m\]$\[\e[0m\] "
+	printf "⚡️ $bldylw@ %s  $bldcyn%s\n$txtrst" "$(get_cur_dir)" "$(parse_git_branch)"
+}
+
+# ⇢ ⇥ ↳ ↪ ➜  ➔ 
+
+export CLICOLOR=1
+export PROMPT_COMMAND=print_before_prompt
+export PS1="\[\e[1;35m\]⇥  \[\e[0m\]"
+
+export PATH=$PATH:~/.nexustools
+
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+PATH=${PATH}:/usr/local/mysql/bin
+export PATH
+
+PATH="$PATH:/Users/jahirfiquitiva/Dev/Flutter/sdk/flutter/bin"
+export PATH
+
+export ANDROID_HOME="/Users/jahirfiquitiva/Dev/Android/SDK"
+
+test -f ~/.git-completion.bash && . $_
+
+# alias ls='gls --color -h --group-directories-first'
+
+UPTC_PROXY="http://192.168.3.5:8080"
+
+alias setuptcproxy='export {http,https,ftp,rsync}_proxy=$UPTC_PROXY && export {HTTP,HTTPS,FTP,RSYNC}_PROXY=$UPTC_PROXY'
+alias unsetproxy='export {http,https,ftp,rsync}_proxy="" && export {HTTP,HTTPS,FTP,RSYNC}_PROXY=""'
+
+alias servexvpn='sudo openfortivpn -c forticonf --insecure-ssl'
+alias hefesto='ssh -i ~/servex jfiquitiva@192.168.1.56'
+alias hermes='ssh -i ~/servex jfiquitiva@192.168.1.226'
+alias myasterisk='ssh -l root 192.168.110.215'
+alias downloadAsteriskCourse='cd /Users/jahirfiquitiva/Dev/Servex/CapacitacionAsterisk && rm -rf * && wget -rm -np -R "index.html*" http://23.88.102.167/cdaa/ --user servex --password call10102019 && mv -f 23.88.102.167/cdaa/* . && rm -rf *.html* && rm -rf */*.html* && rm -rf 23.88.102.167'
+
+alias domjudge='ssh -i ~/digitalocean jahir@judge-do'
+alias bpses='ssh -i ~/Dev/bpsmart/bpsmart-elastic jahirfiquitiva@34.75.189.238'
+
+# alias mongod="mongod --config /usr/local/etc/mongod.conf"
+alias mongod="mongod --dbpath /usr/local/var/mongodb"
+
+alias php='/usr/bin/php'
+alias phpdeploy='sudo /usr/bin/php -S localhost:80 -t'
+
+alias phpold='/usr/local/opt/php@5.6/bin/php'
+
+alias pentaho='/Applications/Pentaho/Data\ Integration.app/Contents/MacOS/JavaApplicationStub ; exit;'
+
+alias lsalias="grep -in --color -e '^alias\s+*' ~/.bash_profile | sed 's/alias //' | grep --color -e ':[a-z][a-z0-9]*'"
+
+alias please="sudo"
+alias del="rm -rf"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jahirfiquitiva/google-cloud-sdk/path.bash.inc' ]; then . '/Users/jahirfiquitiva/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jahirfiquitiva/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/jahirfiquitiva/google-cloud-sdk/completion.bash.inc'; fi
