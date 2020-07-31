@@ -7,17 +7,17 @@
 HOST_NAME="⚡️"
 
 shopt -s autocd
-shopt -s histappend
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export PATH=~/bin:$PATH
 export PATH=$PATH:$HOME/bin
 
-export HISTSIZE=5000
-export HISTFILESIZE=10000
-
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+# WHAT DO THESE DO?
+# shopt -s histappend
+# export HISTSIZE=5000
+# export HISTFILESIZE=10000
+# bind '"\e[A": history-search-backward'
+# bind '"\e[B": history-search-forward'
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
