@@ -14,10 +14,9 @@ bind '"\e[B": history-search-forward'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-txtyel='\e[0;33m' # Yellow
-txtcya='\e[0;36m' # Cyan
-bldgrn='\e[1;32m' # Bold Green
-bldpur='\e[1;35m' # Bold Purple
+txtyel='\e[1;33m' # Yellow
+txtmag='\e[1;35m' # Magenta
+txtcya='\e[1;36m' # Cyan
 txtrst='\e[0m'    # Text Reset
 
 emojis=("👾" "💎" "⚡️" "🦄" "☄️" "🚀")
@@ -34,7 +33,7 @@ print_before_the_prompt () {
 
 PROMPT_COMMAND=print_before_the_prompt
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-PS1="$EMOJI > "
+PS1="$EMOJI $txtmag>$txtrst "
 
 function mkcd() {
     mkdir $1 && cd $1
