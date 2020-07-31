@@ -1,0 +1,13 @@
+[user]
+	email = jahir.fiquitiva@gmail.com
+	name = Jahir Fiquitiva			
+[core]
+	editor = nano
+[alias]
+	add-commit = !git add . && git commit
+[credential]
+	helper = osxkeychain
+[color]
+	ui = true
+[format]
+	pretty = oneline
