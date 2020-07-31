@@ -1,5 +1,6 @@
 # this file was heavily based on https://github.com/w3cj/dotfiles
-# install the latest bash
+
+# install the latest bash, but probably not necessary
 # brew install bash;echo /usr/local/bin/bash|sudo tee -a /etc/shells;chsh -s /usr/local/bin/bash
 
 # colors guide: https://misc.flogisoft.com/bash/tip_colors_and_formatting
@@ -121,6 +122,8 @@ alias gaa='git add .'
 alias gaaa='git add -A'
 alias gc='git commit'
 alias gcm='git commit -m'
+alias gacm='git add-commit -m'
+alias gacme='git add-commit -m --allow-empty'
 alias gd='git diff'
 alias gi='git init'
 alias gl='git log'
