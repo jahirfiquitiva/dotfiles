@@ -1,3 +1,8 @@
+# install the latest bash
+# brew install bash;echo /usr/local/bin/bash|sudo tee -a /etc/shells;chsh -s /usr/local/bin/bash
+
+# colors guide: https://misc.flogisoft.com/bash/tip_colors_and_formatting
+
 HOST_NAME="⚡️"
 
 shopt -s autocd
@@ -18,7 +23,7 @@ export LANG=en_US.UTF-8
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-txtyel='\e[1;33m' # Yellow
+txtyel='\e[0;33m' # Yellow
 txtmag='\e[1;35m' # Magenta
 txtcya='\e[1;36m' # Cyan
 txtrst='\e[0m'    # Text Reset
@@ -166,6 +171,7 @@ alias pentaho='/Applications/Pentaho/Data\ Integration.app/Contents/MacOS/JavaAp
 alias lsalias="grep -in --color -e '^alias\s+*' ~/.bash_profile | sed 's/alias //' | grep --color -e ':[a-z][a-z0-9]*'" # prints all custom alias
 alias please="sudo"
 alias del="rm -rf"
+alias colors="npx colortest"
 
 # ----------------------
 # Google Cloud Stuff
