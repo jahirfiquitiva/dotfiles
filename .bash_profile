@@ -1,3 +1,4 @@
+# this file was heavily based on https://github.com/w3cj/dotfiles
 # install the latest bash
 # brew install bash;echo /usr/local/bin/bash|sudo tee -a /etc/shells;chsh -s /usr/local/bin/bash
 
