@@ -83,7 +83,7 @@ print_before_prompt () {
     home=$HOME
     dir=${dir/"$HOME"/"~"}
     # printf "\n$txtyel%s @ %s $txtcya%s\n$txtrst" "$HOST_NAME" "$dir" "$(vcprompt)"
-    printf "\n$EMOJI $txtyel @ %s  $txtcya%s\n$txtrst" "$dir" "$(parse_git_branch)"
+    printf "\n$EMOJI $txtyel@ %s  $txtcya%s\n$txtrst" "$dir" "$(parse_git_branch)"
 }
 
 export PROMPT_COMMAND=print_before_prompt
