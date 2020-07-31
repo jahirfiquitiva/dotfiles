@@ -6,13 +6,12 @@
 
 HOST_NAME="⚡️"
 
-shopt -s autocd
-
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export PATH=~/bin:$PATH
 export PATH=$PATH:$HOME/bin
 
 # WHAT DO THESE DO?
+# shopt -s autocd
 # shopt -s histappend
 # export HISTSIZE=5000
 # export HISTFILESIZE=10000
@@ -88,7 +87,8 @@ print_before_prompt () {
 
 export PROMPT_COMMAND=print_before_prompt
 # PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-export PS1="$txtmag>  $txtrst"
+# export PS1="$txtmag>  $txtrst"
+export PS1="\[\e[1;35m\]⇥  \[\e[0m\]"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
