@@ -80,7 +80,7 @@ function parse_git_branch() {
 	fi
 }
 
-print_before_the_prompt () {
+print_before_prompt () {
     dir=$PWD
     home=$HOME
     dir=${dir/"$HOME"/"~"}
@@ -88,9 +88,9 @@ print_before_the_prompt () {
     printf "\n$EMOJI $txtyel @ %s  $txtcya%s\n$txtrst" "$dir" "$(parse_git_branch)"
 }
 
-PROMPT_COMMAND=print_before_the_prompt
-PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-PS1="$txtmag-> $txtrst "
+export PROMPT_COMMAND=print_before_prompt
+# PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PS1="$txtmag⇥  $txtrst "
 
 function mkcd() {
     mkdir $1 && cd $1
