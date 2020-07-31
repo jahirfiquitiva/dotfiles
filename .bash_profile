@@ -88,7 +88,7 @@ print_before_prompt () {
 
 export PROMPT_COMMAND=print_before_prompt
 # PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-export PS1="$txtmag⇥   $txtrst"
+export PS1="$txtmag>  $txtrst"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
