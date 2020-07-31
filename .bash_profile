@@ -79,12 +79,12 @@ print_before_the_prompt () {
     home=$HOME
     dir=${dir/"$HOME"/"~"}
     # printf "\n$txtyel%s @ %s $txtcya%s\n$txtrst" "$HOST_NAME" "$dir" "$(vcprompt)"
-    printf "\n$txtyel%s  $txtcya%s\n$txtrst" "$dir" "$(parse_git_branch)"
+    printf "\n$EMOJI $txtyel @ %s  $txtcya%s\n$txtrst" "$dir" "$(parse_git_branch)"
 }
 
 PROMPT_COMMAND=print_before_the_prompt
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-PS1="$EMOJI $txtmag>$txtrst "
+PS1="$txtmag⇥  $txtrst "
 
 function mkcd() {
     mkdir $1 && cd $1
