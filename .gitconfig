@@ -3,6 +3,7 @@
 	name = Jahir Fiquitiva			
 [core]
 	editor = nano
+	ignorecase = false
 [alias]
 	add-commit = !git add . && git commit
 [credential]
