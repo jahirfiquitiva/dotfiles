@@ -4,6 +4,7 @@
 # brew install bash;echo /usr/local/bin/bash|sudo tee -a /etc/shells;chsh -s /usr/local/bin/bash
 
 # colors guide: https://misc.flogisoft.com/bash/tip_colors_and_formatting
+# git completion bash: https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 
 HOST_NAME="⚡️"
 
