@@ -180,6 +180,7 @@ alias lsalias="grep -in --color -e '^alias\s+*' ~/.bash_profile | sed 's/alias /
 alias please="sudo"
 alias del="rm -rf"
 alias colors="npx colortest"
+alias fixnvm="nvm use --delete-prefix $(cat .nvmrc) --silent && nvm current"
 
 # ----------------------
 # Google Cloud Stuff
