@@ -179,6 +179,7 @@ alias pentaho='/Applications/Pentaho/Data\ Integration.app/Contents/MacOS/JavaAp
 alias lsalias="grep -in --color -e '^alias\s+*' ~/.bash_profile | sed 's/alias //' | grep --color -e ':[a-z][a-z0-9]*'" # prints all custom alias
 alias please="sudo"
 alias del="rm -rf"
+alias delempty="rm -rf */.DS_Store && rm -d *"
 alias colors="npx colortest"
 alias fixnvm="nvm use --delete-prefix $(cat .nvmrc) --silent && nvm current"
 
