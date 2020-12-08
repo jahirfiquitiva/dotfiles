@@ -181,7 +181,7 @@ alias please="sudo"
 alias del="rm -rf"
 alias delempty="rm -rf */.DS_Store && rm -d *"
 alias colors="npx colortest"
-alias fixnvm="nvm use --delete-prefix $(cat .nvmrc) --silent && nvm current"
+alias fixnvm="nvm use --delete-prefix v12.19.0 --silent; nvm use --delete-prefix $(cat .nvmrc) --silent; nvm current"
 
 # ----------------------
 # Google Cloud Stuff
