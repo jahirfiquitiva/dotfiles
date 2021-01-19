@@ -12,3 +12,5 @@
 	ui = true
 [format]
 	pretty = oneline
+[init]
+        defaultBranch = main
