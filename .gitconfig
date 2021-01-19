@@ -13,4 +13,4 @@
 [format]
 	pretty = oneline
 [init]
-        defaultBranch = main
+	defaultBranch = main
