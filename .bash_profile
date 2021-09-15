@@ -6,6 +6,7 @@
 # colors guide: https://misc.flogisoft.com/bash/tip_colors_and_formatting
 # git completion bash: https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 
+ulimit -n 65536 200000
 HOST_NAME="⚡️"
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -123,6 +124,7 @@ alias gaa='git add .'
 alias gaaa='git add -A'
 alias gc='git commit'
 alias gcm='git commit -m'
+alias gcamend='git commit --amend -m'
 alias gacm='git add-commit -m'
 alias gmac='gacm'
 alias gacme='git add-commit -m --allow-empty'
@@ -181,14 +183,18 @@ alias please="sudo"
 alias del="rm -rf"
 alias delempty="rm -rf */.DS_Store && rm -d *"
 alias colors="npx colortest"
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias fixnvm="nvm use --delete-prefix v12.19.0 --silent; nvm use --delete-prefix $(cat .nvmrc) --silent; nvm current"
+alias start-cassandra="JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_275` cassandra -f"
+export NEO4J_HOME="/Users/jahir/Downloads/neo4j-community-4.2.4"
 
-# ----------------------
-# Google Cloud Stuff
-# ----------------------
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jahirfiquitiva/google-cloud-sdk/path.bash.inc' ]; then . '/Users/jahirfiquitiva/google-cloud-sdk/path.bash.inc'; fi
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jahirfiquitiva/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/jahirfiquitiva/google-cloud-sdk/completion.bash.inc'; fi
+# MSCo
+alias wgac="yarn build:ui && cd packages/shopify-theme && yarn build && cd ../.. && yarn ws:shopify-theme develop"
+alias wgacweb="del ./packages/web/public/_next && yarn build:ui && cd packages/web && yarn build:test && cd ../.. && yarn develop:web:only"
