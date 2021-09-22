@@ -161,6 +161,7 @@ export PATH
 export ANDROID_HOME="/Users/jahirfiquitiva/Dev/Android/SDK"
 
 # Enable git completion
+# curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash && chmod +x ~/.git-completion.bash
 test -f ~/.git-completion.bash && . $_
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
