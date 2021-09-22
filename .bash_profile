@@ -162,6 +162,9 @@ export ANDROID_HOME="/Users/jahirfiquitiva/Dev/Android/SDK"
 
 # Enable git completion
 test -f ~/.git-completion.bash && . $_
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 # ----------------------
 # Extra Aliases
