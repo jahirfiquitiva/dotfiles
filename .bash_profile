@@ -1,3 +1,6 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/bash_profile.pre.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.pre.bash"
+
 # this file was heavily based on https://github.com/w3cj/dotfiles
 
 # install the latest bash, but probably not necessary
@@ -88,9 +91,11 @@ print_before_prompt () {
     printf "\n$EMOJI $txtyel@ %s $txtcya%s\n$txtrst" "$dir" "$(parse_git_branch)"
 }
 
-export PROMPT_COMMAND=print_before_prompt
-# PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-# export PS1="$txtmag>  $txtrst"
+if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+	export PROMPT_COMMAND=print_before_prompt
+	# PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+	# export PS1="$txtmag>  $txtrst"
+fi
 export PS1="\[\e[1;35m\]⇥  \[\e[0m\]"
 
 export LC_ALL=en_US.UTF-8
@@ -103,10 +108,9 @@ function mkcd() {
 # -------
 # Aliases
 # -------
-alias 🍺="git checkout -b drunk"
+alias code='codium'
 alias a='code .'
 alias c='code .'
-alias reveal-md="reveal-md --theme night --highlight-theme hybrid --port 1337"
 alias ns='npm start'
 alias start='npm start'
 alias nr='npm run'
@@ -115,6 +119,7 @@ alias nis='npm i -S'
 alias l="ls" # List files in current directory
 alias ll="ls -al" # List all files in current directory in long list format
 alias o="open ." # Open the current directory in Finder
+alias node-prune='find . -name "node_modules" -type d -prune -exec rm -rf '{}' \;'
 
 # ----------------------
 # Git Aliases
@@ -142,26 +147,16 @@ alias gs='echo ""; echo "*********************************************"; echo -e
 # ----------------------
 export PATH=$PATH:~/.nexustools
 
-# Setting PATH for Python 3.7
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-export PATH
-
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH
+# Setting PATH for Python 3.10
+#alias python='python3'
+export PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
 
 PATH=${PATH}:/usr/local/mysql/bin
 export PATH
 
-PATH="$PATH:/Users/jahirfiquitiva/Dev/Flutter/sdk/flutter/bin"
-export PATH
-
-export ANDROID_HOME="/Users/jahirfiquitiva/Dev/Android/SDK"
+export ANDROID_HOME="/Users/jahir/Library/Android/sdk"
 
 # Enable git completion
-# curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash && chmod +x ~/.git-completion.bash
 test -f ~/.git-completion.bash && . $_
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
@@ -188,9 +183,6 @@ alias del="rm -rf"
 alias delempty="rm -rf */.DS_Store && rm -d *"
 alias colors="npx colortest"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-alias fixnvm="nvm use --delete-prefix v12.19.0 --silent; nvm use --delete-prefix $(cat .nvmrc) --silent; nvm current"
-alias start-cassandra="JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_275` cassandra -f"
-export NEO4J_HOME="/Users/jahir/Downloads/neo4j-community-4.2.4"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -199,6 +191,17 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
-# MSCo
-alias wgac="yarn build:ui && cd packages/shopify-theme && yarn build && cd ../.. && yarn ws:shopify-theme develop"
-alias wgacweb="del ./packages/web/public/_next && yarn build:ui && cd packages/web && yarn build:test && cd ../.. && yarn develop:web:only"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Added by Toolbox App
+export PATH="$PATH:/Users/jahir/Library/Application Support/JetBrains/Toolbox/scripts"
+
+PATH=~/.console-ninja/.bin:$PATH
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/bash_profile.post.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.post.bash"
