@@ -108,6 +108,7 @@ function mkcd() {
 # -------
 # Aliases
 # -------
+alias cls='clear'
 alias code='codium'
 alias a='code .'
 alias c='code .'
