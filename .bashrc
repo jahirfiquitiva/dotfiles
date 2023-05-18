@@ -142,6 +142,7 @@ alias gp='git pull'
 alias gpsh='git push'
 alias gss='git status -sb'
 alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
+alias gignore='git update-index --assume-unchanged'
 
 # ----------------------
 # Additional PATH config
