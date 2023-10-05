@@ -109,7 +109,7 @@ function mkcd() {
 # Aliases
 # -------
 alias cls='clear'
-alias code='codium'
+# alias code='codium'
 alias a='code .'
 alias c='code .'
 alias ns='npm start'
