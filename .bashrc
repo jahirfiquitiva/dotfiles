@@ -1,5 +1,6 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.pre.bash"
+# Q pre block. Keep at the top of this file.
 
 # this file was heavily based on https://github.com/w3cj/dotfiles
 
@@ -109,7 +110,7 @@ function mkcd() {
 # Aliases
 # -------
 alias cls='clear'
-# alias code='codium'
+#alias code='codium'
 alias a='code .'
 alias c='code .'
 alias ns='npm start'
@@ -200,10 +201,34 @@ export PATH="$PATH:/Users/jahir/Library/Application Support/JetBrains/Toolbox/sc
 
 PATH=~/.console-ninja/.bin:$PATH
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Add spotify to path for spicetify
+export PATH="$PATH:/Applications/Spotify.app/Contents/MacOS/Spotify"
+alias spotify="/Applications/Spotify.app/Contents/MacOS/Spotify"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/Users/jahir/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.bash 2>/dev/null || :
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash"
+# Q post block. Keep at the top of this file.
