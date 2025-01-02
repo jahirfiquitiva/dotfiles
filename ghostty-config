@@ -1,0 +1,43 @@
+font-family = "MonoLisa Jahir"
+cursor-style = bar
+background-opacity = 0.9
+background-blur-radius = 20
+
+window-padding-balance = true
+window-padding-x = 12
+window-padding-y = 4
+
+mouse-hide-while-typing = true
+
+window-colorspace = "display-p3"
+
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+confirm-close-surface = false
+
+title = " 👻 "
+
+palette = 0=#262626
+palette = 1=#FC5C65
+palette = 2=#20BF6B
+palette = 3=#FED330
+palette = 4=#2E86DE
+palette = 5=#F368E0
+palette = 6=#0ABDE3
+palette = 7=#F1F2F6
+palette = 8=#474747
+palette = 9=#FD7D84
+palette = 10=#26DE81
+palette = 11=#FEE583
+palette = 12=#54A0FF
+palette = 13=#FF9FF3
+palette = 14=#48DBFB
+palette = 15=#FFFFFF
+background = 0C0C0C
+foreground = FFFFFF
+cursor-color = F81CE5
+cursor-opacity = 0.8
+# selection-background = F81CE5
+# selection-foreground = c6d0f5
+
+selection-invert-fg-bg = true
