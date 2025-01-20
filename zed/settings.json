@@ -1,0 +1,152 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "features": {
+    "copilot": false
+  },
+  "base_keymap": "VSCode",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "preferred_line_length": 80,
+  "soft_wrap": "preferred_line_length",
+  "buffer_font_family": "MonoLisa Jahir",
+  "font_family": "MonoLisa Jahir",
+  "ui_font_family": "MonoLisa Jahir",
+  "buffer_font_size": 14,
+  "buffer_line_height": {
+    "custom": 2
+  },
+  "ui_font_size": 15,
+  "ui_font_fallbacks": ["Operator Mono Lig"],
+  "tab_size": 2,
+  "ui_font_features": {
+    "calt": true,
+    "liga": true,
+    "zero": true,
+    "ss01": true,
+    "ss02": true,
+    "ss06": true,
+    "ss07": true,
+    "ss08": true,
+    "ss10": true,
+    "ss11": true,
+    "ss12": true
+  },
+  "buffer_font_features": {
+    "calt": true,
+    "liga": true,
+    "zero": true,
+    "ss01": true,
+    "ss02": true,
+    "ss06": true,
+    "ss07": true,
+    "ss08": true,
+    "ss10": true,
+    "ss11": true,
+    "ss12": true
+  },
+  "autosave": "on_focus_change",
+  "current_line_highlight": "all",
+  "theme": {
+    "mode": "system",
+    "dark": "Tokyo Night Storm",
+    "light": "One Hunter Light"
+  },
+  "tabs": { "file_icons": true },
+  "cursor_shape": "bar",
+  "auto_install_extensions": {
+    "repl": false,
+    "docker-compose": false
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware",
+    "background_coloring": "indent_aware"
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false
+  },
+  "terminal": {
+    "toolbar": {
+      "title": false,
+      "breadcrumbs": false
+    },
+    "cursor_shape": "bar",
+    "dock": "right",
+    "detect_venv": {
+      "on": {
+        "directories": [".env", "env", ".venv", "venv"],
+        "activate_script": "default"
+      }
+    },
+    "line_height": "comfortable",
+    "option_as_meta": false,
+    "button": false,
+    "working_directory": "current_project_directory"
+  },
+  "project_panel": {
+    "button": false,
+    "indent_size": 24,
+    "default_width": 320,
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "outline_panel": {
+    "button": false,
+    "default_width": 320,
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "collaboration_panel": {
+    "button": false,
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "diagnostics": {
+    "include_warnings": false
+  },
+  "assistant": {
+    "enabled": false,
+    "button": false,
+    "version": "1",
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "chat_panel": {
+    "button": false,
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "notification_panel": {
+    "button": false,
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "language_models": {
+    "copilot_chat": null
+  }
+}
