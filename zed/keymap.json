@@ -1,0 +1,12 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-cmd-l": "editor::Format",
+      "cmd-d": "editor::DuplicateLineDown",
+      "alt-shift-up": "editor::MoveLineUp",
+      "alt-shift-down": "editor::MoveLineDown",
+      "cmd-shift-e": "project_panel::ToggleFocus"
+    }
+  }
+]
