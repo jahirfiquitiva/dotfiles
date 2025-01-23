@@ -5,15 +5,27 @@
 	editor = nano
 	ignorecase = false
 	excludesFile = ~/.gitignore
-[alias]
-	add-commit = !git add . && git commit
 [credential]
 	helper = osxkeychain
 [color]
-	ui = true
+        ui = true
+        status = auto
+        branch = auto
 [format]
-	pretty = oneline
+        pretty = oneline
 [init]
-	defaultBranch = main
+        defaultbranch = main
 [pull]
-	rebase = false
+        rebase = false
+[diff]
+        external = difft
+        tool = difftastic
+[difftool]
+        prompt = false
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+# Use a pager for large output, just like other git commands.
+[pager]
+        difftool = true
+[http]
+        postBuffer = 157286400
