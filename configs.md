@@ -3,9 +3,10 @@
 
 **Keyboard**:
 - Fix slow initial key repeat (great for arrow keys)
-	- `defaults write -g InitialKeyRepeat -int 10`
+	- `defaults write -g InitialKeyRepeat -int 50`
 - Fix slow key repeat (also great for arrow keys)
-	- `defaults write -g KeyRepeat -int 1` 
+	- `defaults write -g KeyRepeat -int 25`
+ 	- Integer that represents the delay in milliseconds. The lower the value, the faster the key repeats when held down.
 - (Optional) Disable the [accent marks overlay](https://support.apple.com/guide/mac-help/enter-characters-with-accent-marks-on-mac-mh27474/mac) when pressing a key for a long time
 	- `defaults write -g ApplePressAndHoldEnabled -bool false`
 
