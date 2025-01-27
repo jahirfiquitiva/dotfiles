@@ -5,6 +5,8 @@
 	editor = nano
 	ignorecase = false
 	excludesFile = ~/.gitignore
+[alias]
+	add-commit = !git add . && git commit
 [credential]
 	helper = osxkeychain
 [color]
