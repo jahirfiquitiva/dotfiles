@@ -44,7 +44,6 @@
 		- `brew install yt-dlp # better than youtube-dl`
 		- `ln -s /opt/homebrew/bin/yt-dlp /opt/homebrew/bin/youtube-dl`
 		- `Preference` → `Network` → `Custom youtube-dl path` → `/opt/homebrew/bin/`
-	- More active and up-to-date fork: [IINA Plus](https://github.com/iina-plus/iina)`
 
  **Privacy**:
 - Homebrew
