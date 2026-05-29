@@ -215,7 +215,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
 # pnpm
-export PNPM_HOME="/Users/jahirfiquitiva/Library/pnpm"
+export PNPM_HOME="/opt/homebrew/bin/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
