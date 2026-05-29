@@ -159,7 +159,7 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
 PATH=${PATH}:/usr/local/mysql/bin
 export PATH
 
-export ANDROID_HOME="/Users/jahir/Library/Android/sdk"
+export ANDROID_HOME="/Users/jahirfiquitiva/Library/Android/sdk"
 
 # Enable git completion
 test -f ~/.git-completion.bash && . $_
@@ -199,7 +199,7 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Added by Toolbox App
-export PATH="$PATH:/Users/jahir/Library/Application Support/JetBrains/Toolbox/scripts"
+export PATH="$PATH:/Users/jahirfiquitiva/Library/Application Support/JetBrains/Toolbox/scripts"
 
 PATH=~/.console-ninja/.bin:$PATH
 
@@ -215,7 +215,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
 # pnpm
-export PNPM_HOME="/Users/jahir/Library/pnpm"
+export PNPM_HOME="/Users/jahirfiquitiva/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
