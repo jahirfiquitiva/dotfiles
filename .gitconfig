@@ -1,6 +1,7 @@
 [user]
 	email = jahir.fiquitiva@gmail.com
 	name = Jahir Fiquitiva			
+	signingkey = FD8B30E5A2F3DB33
 [core]
 	editor = nano
 	ignorecase = false
@@ -31,3 +32,5 @@
         difftool = true
 [http]
         postBuffer = 157286400
+[commit]
+	gpgsign = true
