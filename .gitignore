@@ -1,11 +1,30 @@
+# Compiled Python files
+*.pyc
+
+# Folder view configuration files
 .DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Editor folders
 .idea
 .vscode
-.next
+
+# Node projects modules and builds/dist folders
 node_modules
+.next
 dist
 build
 _next
+
+# env files
 .env
 .env*
 *.env
