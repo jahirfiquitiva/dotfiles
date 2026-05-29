@@ -1,5 +1,5 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.pre.bash"
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash"
 # Q pre block. Keep at the top of this file.
 
 # this file was heavily based on https://github.com/w3cj/dotfiles
@@ -16,6 +16,7 @@ HOST_NAME="⚡️"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export PATH=~/bin:$PATH
 export PATH=$PATH:$HOME/bin
+export NX_TUI=false
 
 # WHAT DO THESE DO?
 # shopt -s autocd
@@ -151,7 +152,8 @@ alias gignore='git update-index --assume-unchanged'
 export PATH=$PATH:~/.nexustools
 
 # Setting PATH for Python 3.10
-#alias python='python3'
+alias python='python3'
+alias pip='pip3'
 export PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
 
 PATH=${PATH}:/usr/local/mysql/bin
@@ -228,7 +230,7 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init.bash 2>/dev/null || :
-
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash"
 # Q post block. Keep at the top of this file.
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash"
