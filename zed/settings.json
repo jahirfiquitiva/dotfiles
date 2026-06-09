@@ -78,7 +78,7 @@
   },
   "tab_size": 2,
   "preferred_line_length": 80,
-  "soft_wrap": "preferred_line_length",
+  "soft_wrap": "prefer_line",
   "ui_font_family": "MonoLisa Variable",
   "buffer_font_family": "MonoLisa Variable",
   "buffer_font_size": 14.0,
