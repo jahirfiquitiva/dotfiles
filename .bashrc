@@ -1,7 +1,3 @@
-# Kiro CLI pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash"
-# Q pre block. Keep at the top of this file.
-
 # this file was heavily based on https://github.com/w3cj/dotfiles
 
 # install the latest bash, but probably not necessary
@@ -17,6 +13,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 export PATH=~/bin:$PATH
 export PATH=$PATH:$HOME/bin
 export NX_TUI=false
+export GPG_TTY=$(tty)
 
 # WHAT DO THESE DO?
 # shopt -s autocd
@@ -201,7 +198,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Added by Toolbox App
 export PATH="$PATH:/Users/jahirfiquitiva/Library/Application Support/JetBrains/Toolbox/scripts"
 
-PATH=~/.console-ninja/.bin:$PATH
+
 
 # Add spotify to path for spicetify
 export PATH="$PATH:/Applications/Spotify.app/Contents/MacOS/Spotify"
@@ -230,7 +227,3 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init.bash 2>/dev/null || :
-# Q post block. Keep at the top of this file.
-
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash"
