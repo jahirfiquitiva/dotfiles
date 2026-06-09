@@ -49,3 +49,14 @@
 - Homebrew
 	- `brew analytics off`
 	- TODO: or use env variable
+
+**Autohide dock**
+
+```bash
+defaults write com.apple.dock autohide-delay -int 0
+defaults write com.apple.dock autohide-time-modifier -float 0.5
+killall Dock
+```
+
+**Hide macOS Tahoe's Menu Icons**
+`defaults write -g NSMenuEnableActionImages -bool NO`
