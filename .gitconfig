@@ -2,11 +2,10 @@
 # https://github.com/mathiasbynens/dotfiles/blob/main/.gitconfig
 #
 # Uses difftastic for better diff
-# https://difftastic.wilfred.me.uk/installation.html 
+# https://difftastic.wilfred.me.uk/installation.html
 [user]
 	email = jahir.fiquitiva@gmail.com
-	name = Jahir Fiquitiva			
-	signingkey = FD8B30E5A2F3DB33
+	name = Jahir Fiquitiva
 [core]
 	editor = nano
 	ignorecase = false
@@ -79,3 +78,9 @@
 [help]
 	# Automatically correct and execute mistyped commands.
 	autocorrect = 1
+[user]
+  signingkey = ssh-ed25519 abc123
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
