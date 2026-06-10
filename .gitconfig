@@ -2,15 +2,16 @@
 # https://github.com/mathiasbynens/dotfiles/blob/main/.gitconfig
 #
 # Uses difftastic for better diff
-# https://difftastic.wilfred.me.uk/installation.html
+# https://difftastic.wilfred.me.uk/installation.html 
 [user]
 	email = jahir.fiquitiva@gmail.com
 	name = Jahir Fiquitiva
+	signingkey = ssh-ed25519 abc123
 [core]
 	editor = nano
 	ignorecase = false
 	excludesFile = ~/.gitignore
-        # Make `git rebase` safer on macOS.
+	# Make `git rebase` safer on macOS.
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 	trustctime = false
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
@@ -19,8 +20,6 @@
 	# Speed up commands involving untracked files such as `git status`.
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
-[alias]
-	add-commit = !git add . && git commit
 [apply]
 	# Detect whitespace errors when applying a patch.
 	whitespace = fix
@@ -30,9 +29,9 @@
 [credential]
 	helper = osxkeychain
 [color]
-        ui = auto
-        status = auto
-        branch = auto
+	ui = auto
+	status = auto
+	branch = auto
 [color "branch"]
 	current = yellow reverse
 	remote = cyan
@@ -46,11 +45,11 @@
 	changed = yellow
 	untracked = cyan
 [format]
-        pretty = oneline
+	pretty = oneline
 [init]
-        defaultbranch = main
+	defaultbranch = main
 [pull]
-        rebase = false
+	rebase = false
 [push]
 	# https://git-scm.com/docs/git-config#git-config-pushdefault
 	default = simple
@@ -60,27 +59,25 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 [diff]
-        external = difft
-        tool = difftastic
-        # Detect copies as well as renames.
+	external = difft
+	tool = difftastic
+	# Detect copies as well as renames.
 	renames = copies
 [difftool]
-        prompt = false
+	prompt = false
 [difftool "difftastic"]
-        cmd = difft "$LOCAL" "$REMOTE"
+	cmd = difft "$LOCAL" "$REMOTE"
 # Use a pager for large output, just like other git commands.
 [pager]
-        difftool = true
+	difftool = true
 [http]
-        postBuffer = 157286400
+	postBuffer = 157286400
 [commit]
 	gpgsign = true
 [help]
 	# Automatically correct and execute mistyped commands.
 	autocorrect = 1
-[user]
-  signingkey = ssh-ed25519 abc123
 [gpg]
-  format = ssh
+	format = ssh
 [gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
