@@ -61,7 +61,7 @@
   },
   "title_bar": {
     "show_menus": false,
-    "show_sign_in": true,
+    "show_sign_in": false,
     "show_user_picture": true,
     "show_onboarding_banner": false,
   },
