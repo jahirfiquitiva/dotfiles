@@ -14,6 +14,8 @@ export PATH=~/bin:$PATH
 export PATH=$PATH:$HOME/bin
 export NX_TUI=false
 export GPG_TTY=$(tty)
+export FONTAWESOME_TOKEN=abc
+export FRONTEND_FONTAWESOME_TOKEN=$FONTAWESOME_TOKEN
 
 # WHAT DO THESE DO?
 # shopt -s autocd
