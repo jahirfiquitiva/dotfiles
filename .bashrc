@@ -158,7 +158,8 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
 PATH=${PATH}:/usr/local/mysql/bin
 export PATH
 
-export ANDROID_HOME="/Users/jahirfiquitiva/Library/Android/sdk"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"
 
 # Enable git completion
 test -f ~/.git-completion.bash && . $_
@@ -213,13 +214,8 @@ alias spotify="/Applications/Spotify.app/Contents/MacOS/Spotify"
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
-# pnpm
-export PNPM_HOME="/opt/homebrew/bin/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+# Add .NET Core SDK tools
+export PATH="$PATH:/Users/jahirfiquitiva/.dotnet/tools"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -229,3 +225,21 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init.bash 2>/dev/null || :
+
+# remove aliases by running `pmg setup remove` or deleting the line 
+[ -f '/Users/jahirfiquitiva/.pmg.rc' ] && source '/Users/jahirfiquitiva/.pmg.rc'  # PMG source aliases
+
+# remove PMG shims by running `pmg setup remove` or deleting the line
+export PATH="/Users/jahirfiquitiva/.pmg/bin:$PATH"  # PMG shims
+export PATH="/opt/homebrew/lib/ruby/gems/4.0.0/bin:$PATH" # Ruby gems
+
+# pnpm
+export PNPM_HOME="/Users/jahirfiquitiva/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
+export PATH="$HOME/.super.engineering/bin:$PATH"
+
